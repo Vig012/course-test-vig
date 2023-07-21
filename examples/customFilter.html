@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app='MSGApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js" charset="utf-8"></script>
+    <script src="customFilter.js" charset="utf-8"></script>
+    <title>Custom Filter</title>
+  </head>
+  <body>
+    <h1>Custom Filter</h1>
+    <div ng-controller='MSGController'>
+      Message is: <br>
+        {{name}} has a message for you: <br>
+        Original: {{sayMessage()}} <br>
+        Loves: {{sayLovesMessage()}} <br>
+        Truth: {{sayLovesMessage() | truth: 'South' : 'North' }} <br>
+        BIG TRUTH: {{sayLovesMessage() | truth: 'South' : 'North' | uppercase }}
+        <div>
+          <button ng-click="feedVignesh()">Feed {{name}}</button>
+          <br>
+          <img ng-src="images/{{name}}_{{stateOfBeing}}.JPG" width="200px;" height="300px;">
+        </div>
+    </div>
+  </body>
+</html>

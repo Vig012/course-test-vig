@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app='MSGApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js" charset="utf-8"></script>
+    <script src="filter.js" charset="utf-8"></script>
+    <title>Expression and Interpolation</title>
+  </head>
+  <body>
+    <h1>Expression and Interpolation</h1>
+    <div ng-controller='MSGController'>
+      Message is: <br>
+        {{name}} has a message for you: <br>
+        Original: {{sayMessage()}}
+        <div>
+          <button ng-click="feedVignesh()">Feed {{name}}</button>
+          Cost: {{cookieCost | currency : "#blah" : 4}}
+          <br>
+          <img ng-src="images/{{name}}_{{stateOfBeing}}.JPG" width="200px;" height="300px;">
+        </div>
+    </div>
+  </body>
+</html>
