@@ -17,14 +17,24 @@ function MenuService($http, ApiPath) {
 
 
   service.getMenuItems = function (category) {
-    var config = {};
-    if (category) {
-      config.params = {'category': category};
-    }
-
-    return $http.get(ApiPath + '/menu_items.json', config).then(function (response) {
+    return $http.get(ApiPath + '/menu_items/' + category + '.json').then(function (response) {
       return response.data;
     });
+  };
+
+  service.getMenuItem = function (short_name) {
+    short_name = short_name.toUpperCase();
+    if (short_name.match(/^[A-Z]+[0-9]+$/)) {
+      var i = short_name.search(/[0-9]+/);
+      var category = short_name.substring(0,i);
+      var itemIndex = short_name.substring(i) - 1;
+      return $http.get(ApiPath + '/menu_items/' + category + '/menu_items/' + itemIndex + '.json').then(function (response) {
+        response.data.categoryShortName = category;
+        return response.data;
+      });
+    } else {
+      throw "Invalid item code";
+    }
   };
 
 }

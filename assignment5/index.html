@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>David Chu's China Bistro</title>
+    <title>Chinese Restaurant</title>
     <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -25,10 +25,10 @@
             </a>
 
             <div class="navbar-brand">
-              <a href="index.html"><h1>David Chu's China Bistro</h1></a>
+              <a href="index.html"><h1>Chinese Restaurant</h1></a>
               <p>
               <img src="images/star-k-logo.png" alt="Kosher certification">
-              <span>Kosher Certified</span>
+              <span>International Certified</span>
               </p>
             </div>
 
@@ -50,17 +50,17 @@
                 <a ui-sref="public.menu">
                   <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>
               </li>
-              <li>
-                <a ui-sref="myinfo">
-                  <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My Info</a>
+              <li ui-sref-active="active">
+                <a ui-sref="public.userinfo">
+                  <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My info</a>
               </li>
-              <li>
-                <a ui-sref="signup">
-                  <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Sign Up</a>
+              <li ui-sref-active="active">
+                <a ui-sref="public.signup">
+                  <span class="glyphicon glyphicon-log-in"></span><br class="hidden-xs"> Sign up</a>
               </li>
               <li id="phone" class="hidden-xs">
                 <a href="tel:410-602-5008">
-                  <span>410-602-5008</span></a><div>* We Deliver</div>
+                  <span>343-343-455</span></a><div>* We Deliver</div>
               </li>
             </ul><!-- #nav-list -->
           </div><!-- .collapse .navbar-collapse -->
@@ -94,8 +94,8 @@
           </section>
           <section id="address" class="col-sm-4">
             <span>Address:</span><br>
-            7105 Reisterstown Road<br>
-            Baltimore, MD 21215
+            7105 Main Road<br>
+            Colaviri, MD 21215
             <p>* Delivery area within 3-4 miles, with minimum order of $20 plus $3 charge for all deliveries.</p>
             <hr class="visible-xs">
           </section>
@@ -105,7 +105,7 @@
           </section>
         </div>
         <div class="text-center">
-          &copy; Copyright David Chu's China Bistro 2016 |
+          &copy; Copyright Bost Restaurant 2023 |
           <a ui-sref="admin.auth">Admin</a></div>
       </div>
     </footer>
@@ -124,6 +124,7 @@
     <script src="src/common/loading/loading.component.js"></script>
     <script src="src/common/loading/loading.interceptor.js"></script>
     <script src="src/common/menu.service.js"></script>
+    <script src="src/common/user.service.js"></script>
 
     <!-- Public Module -->
     <script src="src/public/public.module.js"></script>
@@ -132,10 +133,8 @@
     <script src="src/public/menu-category/menu-category.component.js"></script>
     <script src="src/public/menu-items/menu-items.controller.js"></script>
     <script src="src/public/menu-item/menu-item.component.js"></script>
-    <script src="src/public/signup.controller.js"></script>
-    <script src="src/public/signup.service.js"></script>
-    <script src="src/public/info/info.controller.js"></script>
-    <script src="src/public/menu-available/menu-available.service.js"></script>
+    <script src="src/public/signup/signup.controller.js"></script>
+    <script src="src/public/userinfo/userinfo.controller.js"></script>
 
     <!-- ADMIN SITE -->
 
